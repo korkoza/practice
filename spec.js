@@ -2,8 +2,8 @@
 describe('Protractor Demo App', function() {
     let signIn = element(by.css('.login'));
     let submitLogin = element(by.id('SubmitLogin'));
-    var email = element(by.id('email'));
-    var passwd = element(by.id('passwd'));
+    let email = element(by.id('email'));
+    let passwd = element(by.id('passwd'));
     userName = element(by.css('.account>span'))
  
   
@@ -25,7 +25,7 @@ describe('Protractor Demo App', function() {
         //step 3
         await submitLogin.click();
           
-        await browser.sleep(3000);
+       
         
         await expect(userName.getText()).toEqual('Petro Petrov');
           
