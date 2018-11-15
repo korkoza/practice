@@ -1,10 +1,12 @@
 class MyAccountPage {
-    constructor() {
-        this.userName = element(by.css('.account>span'))
-    }
+    constructor() {}
  
+    getUserNameElement() {
+        return element(by.css('.account>span'));
+    }
+
     async getUserName() {
-        return this.userName.getText();
+        return await this.getUserNameElement().getText();
     }
 
 

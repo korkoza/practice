@@ -1,32 +1,46 @@
 class LoginPage {
-    constructor() {
-        this.submitLogin = element(by.id('SubmitLogin'));
-        this.email = element(by.id('email'));
-        this.passwd = element(by.id('passwd'));
-        this.createAccount = element(by.id('SubmitCreate'));
-        this.invalidEmail = element(by.css('#create_account_error li'));
-        }
-   
+    constructor() {}
+    
+    getEmailElement() {
+        return element(by.id('email'));
+    }
+
+    getPassElement() {
+        return element(by.id('passwd'));
+    }
+
+    getCreateElement() {
+        return element(by.id('SubmitCreate'));
+    }
+
+    getLoginElement() {
+        return element(by.id('SubmitLogin'));
+    }
+
+    getErrorElement() {
+        return element(by.css('#create_account_error li'));
+    }
+
     async setEmail(a) {
-        await this.email.sendKeys(a);
+        await this.getEmailElement().sendKeys(a);
     };
  
     async setPasswd(password) {
-        await this.passwd.sendKeys(password);
+        await this.getPassElement().sendKeys(password);
     };   
  
     async submit(){
-        await this.submitLogin.click();
+        await this.getLoginElement().click();
     };
 
     async submitCreate(){
-        await this.createAccount.click();
+        await this.getCreateElement().click();
     };
 
     async getErrorEmail() {
-        return this.invalidEmail.getText();
+        return await this.getErrorElement().getText();
     }
  };
  
- module.exports = new LoginPage()
+ module.exports = new LoginPage();
  
