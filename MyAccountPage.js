@@ -6,6 +6,8 @@ class MyAccountPage {
     async getUserName() {
         return this.userName.getText();
     }
+
+
  };
  
  module.exports = new MyAccountPage();
