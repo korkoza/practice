@@ -28,8 +28,6 @@ exports.config = {
         
         jasmine.getEnv().afterEach(async () => {
             await createScreenShotAllure();         
-        });
-
-        browser.manage().setTimeouts({implicit: (5000)});
+        });        
     }
 }

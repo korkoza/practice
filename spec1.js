@@ -5,6 +5,7 @@ let MainPage = require ('./MainPage');
 describe('Protractor Demo App', function() {
  beforeAll(async function() {
     await browser.restart();
+    await browser.manage().setTimeouts({implicit: 5000});
     browser.waitForAngularEnabled(false);
     await browser.get('http://automationpractice.com/index.php');
 });
