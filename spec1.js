@@ -2,7 +2,7 @@ let LoginPage = require ('./LoginPage');
 let MyAccountPage = require ('./MyAccountPage');
 let MainPage = require ('./MainPage');
 
-describe('Protractor Demo App', function() {
+describe('Login page', function() {
  beforeAll(async function() {
     await browser.restart();
     await browser.manage().setTimeouts({implicit: 5000});
@@ -11,16 +11,16 @@ describe('Protractor Demo App', function() {
 });
 
 it('successful login', async function() {
-    await allure.createStep('step 1', async function() {
+    await allure.createStep('1. Click Sign in', async function() {
         await MainPage.signInClick();
     })();
      
-    await allure.createStep('step 2', async function() {
+    await allure.createStep('2. Fill out Email and password', async function() {
         await LoginPage.setEmail('mykola2@gmail.com');
         await LoginPage.setPasswd('passw0rd');
     })();
 
-    await allure.createStep('step 3', async function() {
+    await allure.createStep('3. Click Create an account', async function() {
         await LoginPage.submit();
         await expect(MyAccountPage.getUserName()).toEqual('Petro Petrov');
     })();

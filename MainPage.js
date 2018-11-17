@@ -2,9 +2,12 @@ class MainPage {
     constructor() {        
     }
 
+    getSignInElement() {
+        return element(by.css('.login'));
+    }
+
     async signInClick(){
-        this.signIn = element(by.css('.login'));
-        await this.signIn.click();
+        await this.getSignInElement().click();
     }   
 };
 

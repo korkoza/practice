@@ -1,6 +1,10 @@
 class LoginPage {
     constructor() {}
-    
+
+    getEmailCreateElement() {
+        return element(by.id('email_create'));
+    }
+
     getEmailElement() {
         return element(by.id('email'));
     }
@@ -39,6 +43,15 @@ class LoginPage {
 
     async getErrorEmail() {
         return await this.getErrorElement().getText();
+    }
+
+    async setEmailCreate(a) {
+        await this.getEmailCreateElement().sendKeys(a);
+    };
+
+    async getErrorChanged(){
+        let EC = protractor.ExpectedConditions;
+        await browser.wait(EC.textToBePresentInElement(this.getErrorElement(), 'An account'), 5000);
     }
  };
  
