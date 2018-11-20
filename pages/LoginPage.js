@@ -1,8 +1,14 @@
-class LoginPage {
-    constructor() {}
+let BasePage = require("./BasePage");
+let ButtonElement = require("../elements/button");
+let InputElement = require("../elements/input");
+
+class LoginPage extends BasePage {
+    constructor() {
+        super();
+    }
 
     getEmailCreateElement() {
-        return element(by.id('email_create'));
+        return new InputElement(element(by.id('email_create')), "Crete Account Input");
     }
 
     getEmailElement() {
@@ -14,7 +20,7 @@ class LoginPage {
     }
 
     getCreateElement() {
-        return element(by.id('SubmitCreate'));
+        return new ButtonElement(element(by.id('SubmitCreate')), "Crete Account Button");
     }
 
     getLoginElement() {
@@ -27,15 +33,15 @@ class LoginPage {
 
     async setEmail(a) {
         await this.getEmailElement().sendKeys(a);
-    };
+    }
  
     async setPasswd(password) {
         await this.getPassElement().sendKeys(password);
-    };   
+    } 
  
     async submit(){
         await this.getLoginElement().click();
-    };
+    }
 
     async submitCreate(){
         await this.getCreateElement().click();

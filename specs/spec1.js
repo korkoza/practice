@@ -1,6 +1,6 @@
-let LoginPage = require ('./LoginPage');
-let MyAccountPage = require ('./MyAccountPage');
-let MainPage = require ('./MainPage');
+let LoginPage = require('../pages/LoginPage');
+let MyAccountPage = require('../pages/MyAccountPage');
+let MainPage = require('../pages/MainPage');
 
 describe('Login page', function() {
  beforeAll(async function() {

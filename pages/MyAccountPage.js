@@ -1,5 +1,10 @@
-class MyAccountPage {
-    constructor() {}
+let BasePage = require("./BasePage");
+
+
+class MyAccountPage extends BasePage {
+    constructor() {
+        super();
+    }
  
     getUserNameElement() {
         return element(by.css('.account>span'));

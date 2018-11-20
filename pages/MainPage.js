@@ -1,5 +1,9 @@
-class MainPage {
-    constructor() {        
+let BasePage = require("./BasePage");
+
+
+class MainPage extends BasePage {
+    constructor() {
+        super();      
     }
 
     getSignInElement() {

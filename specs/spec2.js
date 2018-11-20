@@ -3,7 +3,6 @@ let MainPage = require ('./MainPage');
 let EC = protractor.ExpectedConditions;
 
 
-
 describe('Login page', function() {
     beforeAll(async function() {
         await browser.restart();
